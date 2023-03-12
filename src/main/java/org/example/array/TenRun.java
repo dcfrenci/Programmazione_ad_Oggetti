@@ -10,12 +10,8 @@ public class TenRun {
                 ris[i] = v[i];
             }
             else {
-                if(val != 0){
-                    ris[i] = val;
-                }
-                else {
-                    ris[i] = v[i];
-                }
+                if(val != 0) ris[i] = val;
+                else ris[i] = v[i];
             }
         }
         return ris;
