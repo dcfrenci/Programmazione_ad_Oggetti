@@ -18,11 +18,11 @@ public class Letter {
     public String toText(){
         StringBuilder ris = new StringBuilder();
         ris.append("Dear ");
-        ris.append(this.to + "\n");
+        ris.append(this.to).append("\n");
         for(String str : this.lines){
-            ris.append(str + "\n");
+            ris.append(str).append("\n");
         }
-        ris.append("\nSincerely,\n\n" + this.from);
+        ris.append("\nSincerely,\n\n").append(this.from);
         return ris.toString();
     }
 }
