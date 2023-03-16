@@ -10,19 +10,19 @@ public class Letter {
     public Letter(String from, String to) {
         this.from = from;
         this.to = to;
+        this.lines = new ArrayList<>();
     }
     public void addLine(String line){
-        this.lines.add(line);
+        lines.add(line);
     }
 
     public String toText(){
         StringBuilder ris = new StringBuilder();
-        ris.append("Dear ");
-        ris.append(this.to + "\n");
-        for(String str : this.lines){
-            ris.append(str + "\n");
+        ris.append("Dear ").append(this.to).append("\n\n");
+        for(String str : lines){
+            ris.append(str).append("\n");
         }
-        ris.append("\nSincerely,\n\n" + this.from);
+        ris.append("\nSincerely,\n\n").append(this.from);
         return ris.toString();
     }
 }
