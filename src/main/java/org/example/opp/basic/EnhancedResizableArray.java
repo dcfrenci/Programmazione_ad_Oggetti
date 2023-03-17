@@ -9,7 +9,7 @@ public class EnhancedResizableArray {
         this.v = new int[0];
     }
     public void add(int value){
-        this.v = Arrays.copyOf(v, this.v.length + 1);
+        this.v = Arrays.copyOf(v, v.length + 1);
         this.v[v.length - 1] = value;
     }
     public void remove(int index){
