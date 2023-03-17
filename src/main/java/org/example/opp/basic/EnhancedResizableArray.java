@@ -1,15 +1,12 @@
 package org.example.opp.basic;
 
-import com.sun.jdi.ArrayReference;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class EnhancedResizableArray {
     int []v;
 
-    public EnhancedResizableArray(int[] v) {
-        this.v = v;
+    public EnhancedResizableArray() {
+        this.v = new int[0];
     }
     public void add(int value){
         this.v = Arrays.copyOf(v, this.v.length + 1);
@@ -25,6 +22,9 @@ public class EnhancedResizableArray {
             }
         }
         this.v = newV;
+    }
+    public int get(int index){
+        return v[index];
     }
     public void set(int index, int value){
         this.v[index] = value;

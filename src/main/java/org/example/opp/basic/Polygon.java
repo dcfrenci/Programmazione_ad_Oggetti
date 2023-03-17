@@ -30,7 +30,7 @@ public class Polygon {
         return perimeter;
     }
 
-    public double getDouble(){
+    public double getArea(){
         double firstArea = 0, secondArea = 0;
         for(int i = 0; i < vertices.length - 2; i++){
             firstArea += this.vertices[i].x * this.vertices[i + 1].y;
@@ -38,13 +38,11 @@ public class Polygon {
         }
         firstArea += this.vertices[vertices.length - 1].x * this.vertices[0].y;
         secondArea += this.vertices[0].x + this.vertices[vertices.length - 1].y;
-        return 0.5 * Math.abs(firstArea - secondArea);
+        return 0.5 * Math.abs(firstArea + secondArea);
     }
 
     @Override
     public String toString() {
-        return "Polygon{" +
-                "vertices=" + Arrays.toString(vertices) +
-                '}';
+        return "Polygon{" + "vertices=" + Arrays.toString(vertices) + '}';
     }
 }

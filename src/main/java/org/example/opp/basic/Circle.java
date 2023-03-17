@@ -26,12 +26,12 @@ public class Circle {
         this.radius = radius;
     }
 
-    public double getPerimetre(){
+    public double getPerimeter(){
         return 2 * Math.PI * this.radius;
     }
 
     public double getArea(){
-        return 4 * Math.PI * this.radius * this.radius;
+        return Math.PI * this.radius * this.radius;
     }
 
     public boolean contains(Point point){

@@ -6,8 +6,8 @@ import java.util.random.RandomGenerator;
 public class EnhancedArray {
     int[] v;
 
-    public EnhancedArray(int[] v) {
-        this.v = v;
+    public EnhancedArray(int lenght) {
+        this.v = new int[lenght];
     }
     public int size(){
         return v.length;

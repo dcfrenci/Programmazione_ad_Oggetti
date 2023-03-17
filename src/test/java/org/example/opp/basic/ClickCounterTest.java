@@ -1,6 +1,5 @@
-package org.example.opp;
+package org.example.opp.basic;
 
-import org.example.opp.basic.ClickCounter;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
