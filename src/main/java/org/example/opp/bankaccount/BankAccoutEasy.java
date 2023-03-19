@@ -18,7 +18,9 @@ public class BankAccoutEasy extends AbstractBankAccount{
 
     @Override
     public double transfer(BankAccount bankAccount, double amount) {
-        if(this.IBAN.substring(0, 2).equals(bankAccount.getIBAN().substring(0,2))) return super.transfer(bankAccount, amount);
-        return 0;
+        if(!getIBAN().substring(0, 2).equals(bankAccount.getIBAN().substring(0, 2))) return 0;
+        amount = this.withdraw(amount);
+        bankAccount.deposit(amount);
+        return amount;
     }
 }

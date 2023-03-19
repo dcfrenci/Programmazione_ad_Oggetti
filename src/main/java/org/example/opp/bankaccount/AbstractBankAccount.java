@@ -15,16 +15,17 @@ abstract class AbstractBankAccount implements BankAccount {
 
     @Override
     public void addInterest() {
-        this.balance -= (balance * interestRate * 365) / 36500;
+        this.balance -= getBalance() * getInterestRate();
     }
     public void applyFee(){
-
+        this.balance -= getOperationFee();
     }
     public void checkIBAN(String IBAN){
 
     }
     public void deposit(double amount){
-        this.balance += (amount + this.operationFee);
+        this.balance += amount;
+        applyFee();
     }
 
     public String getIBAN() {
@@ -57,10 +58,5 @@ abstract class AbstractBankAccount implements BankAccount {
 
     public void setOperationFee(double operationFee) {
         this.operationFee = operationFee;
-    }
-    public double transfer(BankAccount bankAccount, double amount){
-        amount = withdraw(amount);
-        bankAccount.deposit(amount);
-        return amount;
     }
 }
