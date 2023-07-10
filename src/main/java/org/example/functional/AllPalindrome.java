@@ -1,10 +1,10 @@
 package org.example.functional;
 
-import java.util.HashSet;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class AllPalindrome {
     public static boolean allPalindrome(List<String> strings){
-        return new HashSet<>(strings).containsAll(strings.stream().map(str -> new StringBuilder(str).reverse().toString()).toList());
+        return strings.stream().allMatch(string -> IntStream.range(0, string.length()).noneMatch(i -> string.charAt(i) != string.charAt(string.length() - 1 - i)));
     }
 }
